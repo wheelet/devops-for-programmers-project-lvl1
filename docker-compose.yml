@@ -1,8 +1,5 @@
 version: '3.7'
 
-networks:
-  devops-lvl1-network:
-
 services:
   app:
     build:
@@ -12,8 +9,6 @@ services:
     environment:
       NODOS_HOST: "0.0.0.0"
       NODOS_PORT: "8080"
-    networks:
-      - devops-lvl1-network
     volumes:
       - ./:/app
     command: ['npm', 'test']
