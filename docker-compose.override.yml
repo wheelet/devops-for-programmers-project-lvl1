@@ -6,3 +6,19 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: ['npm', 'start']
+
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
