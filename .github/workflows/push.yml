@@ -11,11 +11,11 @@ env:
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
-  steps:
-    - name: Run container
-      run: make compose-up
-    - name: Run Tests
-      run: make test-compose
+    steps:
+      - name: Run container
+        run: make compose-up
+      - name: Run Tests
+        run: make test-compose
   docker:
     runs-on: ubuntu-latest
     steps:
