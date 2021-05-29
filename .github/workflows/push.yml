@@ -6,7 +6,7 @@ on:
       - 'main'
 
 env:
-  APP_IMAGE_NAME: hexletbasics/services-app
+  APP_IMAGE_NAME: wheelet/devops-for-programmers-project-lvl1
 
 jobs:
   docker:
