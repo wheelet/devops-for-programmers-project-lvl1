@@ -9,12 +9,6 @@ env:
   APP_IMAGE_NAME: wheelet/devops-for-programmers-project-lvl1
 
 jobs:
-  ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run Tests
-        run: make test-compose
   docker:
     runs-on: ubuntu-latest
     steps:
