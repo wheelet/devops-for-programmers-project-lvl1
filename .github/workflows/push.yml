@@ -9,6 +9,13 @@ env:
   APP_IMAGE_NAME: wheelet/devops-for-programmers-project-lvl1
 
 jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Run container
+      run: make compose-up
+    - name: Run Tests
+      run: make test-compose
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +41,3 @@ jobs:
           file: Dockerfile.production
           push: true
           tags: ${{ env.APP_IMAGE_NAME }}:latest
-
-      - name: Run Tests
-        run: make test-compose
