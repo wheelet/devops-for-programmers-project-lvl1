@@ -33,4 +33,4 @@ jobs:
           tags: ${{ env.APP_IMAGE_NAME }}:latest
 
       - name: Run Tests
-        run: make test
+        run: make test-compose
