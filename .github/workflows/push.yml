@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run container
-        run: make compose-up
       - name: Run Tests
         run: make test-compose
   docker:
