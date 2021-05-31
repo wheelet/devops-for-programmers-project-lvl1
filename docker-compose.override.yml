@@ -5,7 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: ['npm', 'start']
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+    command: ['make', 'server']
 
   caddy:
     image: caddy
@@ -15,7 +19,6 @@ services:
       - "443:443"
     volumes:
       - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - $PWD/site:/srv
       - caddy_data:/data
       - caddy_config:/config
 

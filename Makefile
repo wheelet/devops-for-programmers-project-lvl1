@@ -1,5 +1,5 @@
 server:
-	npx nodos server
+	npx nodos server -h 0.0.0.0
 test:
 	npm -s test
 compose-up:
