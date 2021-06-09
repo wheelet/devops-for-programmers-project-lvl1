@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.production
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     volumes:
@@ -21,6 +21,8 @@ services:
       - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+    depends_on:
+      - app
 
 volumes:
   caddy_data:
